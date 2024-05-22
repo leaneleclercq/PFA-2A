@@ -23,7 +23,7 @@ const { userName, coords, agence } = require('./ep');
   await page.type('[name=session_password]', "dydylele00", { delay: 100 });
   await page.click("button[type=submit]");
 
-  // search bar
+  // search bar.
   await page.type('[aria-label=Recherche]', `${userName} ${coords} `, { delay: 100 }); // "data[nom], data[prénom], data[agence]"
   await page.keyboard.press('Enter');
 
