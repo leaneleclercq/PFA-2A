@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <menuLeft />
+      {/*<menuLeft />*/}
       <div>
          <p>
             (`${userName} ${coords}`)
