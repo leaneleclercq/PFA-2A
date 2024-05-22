@@ -11,7 +11,7 @@ const url =
     width: 1200,
     height: 10000,
   });
-  await page.goto(url, { waitUntil: "networkidle2" });
+  await page.goto(url, { waitUntil: "networkidle2" }); 
 
   // image
   // await page.screenshot({
@@ -28,9 +28,9 @@ await page.click("button[id=btn_contact_seller]");
 await page.waitForSelector("button[id=btn_contact_seller]");
 
 let data = await page.evaluate(() => {
-  let userName = document.querySelector("div[id=contact_seller_realtor_user_name]").innerText;
-  let coords = document.querySelector('[id="contact_seller_phone_cell"]').innerText;
-  let agence = document.querySelector('[div="ep-name"]').innerText;
+  let userName = document.querySelector("[id=contact_seller_realtor_user_name]")//.innerText;
+  let coords = document.querySelector('[id="contact_seller_phone_cell"]')//.innerText;
+  let agence = document.querySelector('[div="ep-name"]')//.innerText;
   return { userName, coords, agence };
 });
 
