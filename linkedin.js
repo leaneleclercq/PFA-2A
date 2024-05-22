@@ -24,12 +24,12 @@ const { userName, coords, agence } = require('./ep');
   await page.click("button[type=submit]");
 
   // search bar
-  await page.type('[aria-label=Recherche]', `${userName} ${coords} ${agence}`, { delay: 100 }); // "data[nom], data[prénom], data[agence]"
+  await page.type('[aria-label=Recherche]', `${userName} ${coords} `, { delay: 100 }); // "data[nom], data[prénom], data[agence]"
   await page.keyboard.press('Enter');
 
   console.log(userName);
   console.log(coords);
-  console.log(agence);
+  // console.log(agence);
 
   // research personne
   await page.click("button[class=artdeco-pill artdeco-pill--slate artdeco-pill--choice artdeco-pill--2 search-reusables__filter-pill-button search-reusables__filter-pill-button]");
