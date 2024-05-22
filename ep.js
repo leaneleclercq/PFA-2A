@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 const nodemailer = require("nodemailer");
 
 const url =
-  "https://www.etreproprio.com/immobilier-19278043-vente-maison-75m-a-saint-martin-du-tertre-saint-martin-du-tertre";
+  "https://www.etreproprio.com/immobilier-19260267-vente-maison-3-pieces-saint-martin-du-tertre-saint-martin-du-tertre";
 
 (async () => {
   const browser = await puppeteer.launch({ headless: false });
@@ -28,10 +28,10 @@ await page.click("button[id=btn_contact_seller]");
 await page.waitForSelector("button[id=btn_contact_seller]");
 
 let data = await page.evaluate(() => {
-  let userName = document.querySelector("[id=contact_seller_realtor_user_name]")//.innerText;
-  let coords = document.querySelector('[id="contact_seller_phone_cell"]')//.innerText;
-  let agence = document.querySelector('[div="ep-name"]')//.innerText;
-  return { userName, coords, agence };
+  let userName = document.querySelector("div[id=contact_seller_realtor_user_name]").innerText;
+  let coords = document.querySelector('[id="contact_seller_phone_cell"]').innerText;
+  let agence = document.querySelector(".ep-name").innerText;
+  return { userName, coords, agence};
 });
 
 console.log("Voici les coordonnées : ", data.coords);
@@ -40,7 +40,7 @@ console.log("Voici l'agence : ", data.agence);
 
 
 
-module.exports = { userName: data.userName, coords: data.coords, agence: data.agence };
+module.exports = { userName: data.userName, coords: data.coords };
 
 //let data = await page.evaluate(() => {
 //  return document.querySelector("div[id=contact_seller_realtor_user_name]").innerText, document.querySelector("div[id=contact_seller_realtor_coords]").innerText;
