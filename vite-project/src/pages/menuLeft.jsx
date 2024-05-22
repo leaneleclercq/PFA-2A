@@ -1,4 +1,5 @@
 import React from 'react'
+import menuLeft from './home'
 import logo from './src/img/logo.png'
 
 function menuLeft() {
