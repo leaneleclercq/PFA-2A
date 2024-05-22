@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer");
-const { userName, coords, agence } = require('./ep');
+const { userName, coords, agence } = require('./vite-project/src/scraping/ep');
 
 
 (async () => {
