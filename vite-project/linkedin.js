@@ -2,7 +2,7 @@ const puppeteer = require("puppeteer");
 require("dotenv").config();
 const { userName, coords, agence } = require('./ep');
 
-const url = "https://www.linkedin.com/?trk=seo-authwall-base_nav-header-logo";
+const url = "https://www.linkedin.com/login/fr?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin";
 
 (async () => {
   const browser = await puppeteer.launch({ headless: false });
