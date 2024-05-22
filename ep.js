@@ -28,17 +28,10 @@ await page.click("button[id=btn_contact_seller]");
 await page.waitForSelector("button[id=btn_contact_seller]");
 
 let data = await page.evaluate(() => {
-<<<<<<< HEAD
-  let userName = document.querySelector("[id=contact_seller_realtor_user_name]").innerText;
-  let coords = document.querySelector('[id="contact_seller_phone_cell"]').innerText;
-  let agence = document.querySelector('[div="ep-name"]').innerText;
-  return { userName, coords, agence };
-=======
   let userName = document.querySelector("div[id=contact_seller_realtor_user_name]").innerText;
   let coords = document.querySelector('[id="contact_seller_phone_cell"]').innerText;
   let agence = document.querySelector(".ep-name").innerText;
   return { userName, coords, agence};
->>>>>>> dd825f9b7d2f657ca2bba674175d9c3c0b87fd19
 });
 
 console.log("Voici les coordonnées : ", data.coords);
