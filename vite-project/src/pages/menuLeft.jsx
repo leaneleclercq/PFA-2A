@@ -1,8 +1,7 @@
 import React from 'react'
 import menuLeft from './home'
+import menuLeft from './App.jsx'
 import logo from './src/img/logo.png'
-
-// blabla
 
 function menuLeft() {
     return (
