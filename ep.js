@@ -2,6 +2,10 @@ const puppeteer = require("puppeteer");
 const nodemailer = require("nodemailer");
 import { collection, addDoc } from "firebase/firestore";
 
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+export { db };
+
 const url =
   "https://www.etreproprio.com/immobilier-19278043-vente-maison-75m-a-saint-martin-du-tertre-saint-martin-du-tertre";
 

@@ -5,6 +5,8 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { useEffect } from "react";
+import { db } from '../../ep';
+
 const { userName, coords, agence } = require("./ep");
 
 // blabla
