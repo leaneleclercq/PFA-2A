@@ -1,5 +1,4 @@
 const puppeteer = require("puppeteer");
-const nodemailer = require("nodemailer");
 import { collection, addDoc } from "firebase/firestore";
 
 const app = initializeApp(firebaseConfig);
@@ -16,7 +15,7 @@ const url =
     width: 1200,
     height: 10000,
   });
-  await page.goto(url, { waitUntil: "networkidle2" }); 
+  await page.goto(url, { waitUntil: "networkidle2" });
 
   // image
   // await page.screenshot({

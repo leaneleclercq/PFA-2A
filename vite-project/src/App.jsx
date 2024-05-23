@@ -45,7 +45,6 @@ function App() {
 
   return (
     <>
-      {/*<menuLeft />*/}
       <div>
         <h1>Leads</h1>
         <ul>
