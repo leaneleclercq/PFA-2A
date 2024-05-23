@@ -11,7 +11,9 @@ const { userName, coords, agence } = require("./ep");
 
 function App() {
 
-  useEffect(() => {
+  const [leads, setLeads] = useState([]);
+
+  {/**  useEffect(() => {
     (async () => {
       const q = query(collection(db, "leads"));
       const querySnapshot = await getDocs(q);
@@ -22,15 +24,33 @@ function App() {
       });
       setLeads(docs);
     })();
+  }, []); */}
+
+  useEffect(() => {
+    const fetchLeads = async () => {
+      const q = query(collection(db, "leads"));
+      const querySnapshot = await getDocs(q);
+      const docs = [];
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        docs.push({ id: doc.id, ...doc.data() });
+      });
+      setLeads(docs);
+    };
+
+    fetchLeads();
   }, []);
 
   return (
     <>
       {/*<menuLeft />*/}
       <div>
-        <p>
-          (`${userName} ${coords} ${agence}`)
-        </p>
+        <h1>Leads</h1>
+        <ul>
+          {leads.map(lead => (
+            <li key={lead.id}>{JSON.stringify(lead)}</li>
+          ))}
+        </ul>
       </div>
     </>
   );
