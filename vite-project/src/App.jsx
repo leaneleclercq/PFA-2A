@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 //import menuLeft from './pages/menuLeft'
 import "./App.css";
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, getDocs } from "firebase/firestore";
 import { useEffect } from "react";
 import { db } from '../../ep';
 
