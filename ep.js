@@ -1,6 +1,6 @@
 const puppeteer = require("puppeteer");
 const nodemailer = require("nodemailer");
-import { collection, addDoc } from "firebase/firestore";
+// import { collection, addDoc } from "firebase/firestore";
 
 const url =
   "https://www.etreproprio.com/immobilier-19278043-vente-maison-75m-a-saint-martin-du-tertre-saint-martin-du-tertre";
@@ -40,8 +40,8 @@ console.log("Voici le nom de l'utilisateur : ", data.userName);
 console.log("Voici l'agence : ", data.agence);
 
 
-const docRef = await addDoc(collection(db, "leads"), data);
-console.log("Document written with ID: ", docRef.id);
+// const docRef = await addDoc(collection(db, "leads"), data);
+// console.log("Document written with ID: ", docRef.id);
 
 module.exports = { userName: data.userName, coords: data.coords };
 
