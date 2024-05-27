@@ -62,6 +62,7 @@ console.log("Voici l'agence : ", data.agence);
 
 module.exports = { userName: data.userName, coords: data.coords };
 
+
 //let data = await page.evaluate(() => {
 //  return document.querySelector("div[id=contact_seller_realtor_user_name]").innerText, document.querySelector("div[id=contact_seller_realtor_coords]").innerText;
 //});
@@ -95,4 +96,5 @@ module.exports = { userName: data.userName, coords: data.coords };
   }*/
 
 })();
-export { db };
+// export { db };
+
