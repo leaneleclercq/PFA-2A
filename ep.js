@@ -43,7 +43,10 @@ await page.click("#btn_contact_seller");
 await page.waitForSelector(".ep-contact-info-form", {visible: true});
 
 let data = await page.evaluate(() => {
-  let userName = document.querySelector("#contact_seller_realtor_user_name").innerText;
+  //let userName = document.querySelector("#contact_seller_realtor_user_name").innerText;
+  let leann = document.querySelector("#contact_seller_realtor_user_name").innerText;
+  let parts = leann.split('Vente gérée par ');
+  let userName = parts.join('');
   let coords = document.querySelector('#contact_seller_phone_cell').innerText;
   let agence = document.querySelector(".ep-name").innerText;
   return { userName, coords, agence};
