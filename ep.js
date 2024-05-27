@@ -1,11 +1,20 @@
 const puppeteer = require("puppeteer");
-import { collection, addDoc } from "firebase/firestore";
-const nodemailer = require("nodemailer");
-// import { collection, addDoc } from "firebase/firestore";
+//import { collection, addDoc } from "firebase/firestore";
+const { collection, addDoc, getFirestore } = require("firebase/firestore");
+const { initializeApp } = require("firebase/app");
+
+const firebaseConfig = {
+  apiKey: "AIzaSyByGo8uxaG60BHYAhT8q6sAKONEV_z-51k",
+  authDomain: "pfa-c21.firebaseapp.com",
+  projectId: "pfa-c21",
+  storageBucket: "pfa-c21.appspot.com",
+  messagingSenderId: "312215454950",
+  appId: "1:312215454950:web:232e9c1afff43a6f012727",
+  measurementId: "G-NQQ9HR9FXL"
+};
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-export { db };
 
 const url =
   "https://www.etreproprio.com/immobilier-19278043-vente-maison-75m-a-saint-martin-du-tertre-saint-martin-du-tertre";
@@ -48,7 +57,7 @@ console.log("Voici l'agence : ", data.agence);
  const docRef = await addDoc(collection(db, "leads"), data);
  console.log("Document written with ID: ", docRef.id);
 
-module.exports = { userName: data.userName, coords: data.coords };
+module.exports = { userName: data.userName, coords: data.coords, db };
 
 //let data = await page.evaluate(() => {
 //  return document.querySelector("div[id=contact_seller_realtor_user_name]").innerText, document.querySelector("div[id=contact_seller_realtor_coords]").innerText;
