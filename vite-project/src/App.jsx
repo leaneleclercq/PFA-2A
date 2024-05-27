@@ -1,15 +1,11 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 //import menuLeft from './pages/menuLeft'
 import "./App.css";
 import { collection, query, getDocs } from "firebase/firestore";
+import { db } from "../../ep";
 import { useEffect } from "react";
-import { db } from '../ep';
 
 const { userName, coords, agence } = require("./ep");
-
-// blabla
 
 function App() {
 
@@ -30,8 +26,8 @@ function App() {
 
   useEffect(() => {
     const fetchLeads = async () => {
-      const q = query(collection(db, "leads"));
-      const querySnapshot = await getDocs(q);
+      const q = query(collection(db, "leads")); // pour aller au bon endroit 
+      const querySnapshot = await getDocs(q); // pour aller au bon endroit aussi
       const docs = []; // création d'un tableau 
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
@@ -39,7 +35,6 @@ function App() {
       });
       setLeads(docs);
     };
-
     fetchLeads();
   }, []);
 
@@ -47,13 +42,13 @@ function App() {
 
   return (
     <>
-      <div>
+""      <div>
         <h1>Leads</h1>
         <ul>
           {leads.map(lead => (
             <li key={lead.id}>{JSON.stringify(lead)}</li> 
           ))}
-        </ul>
+          </ul>
       </div>
     </>
   );

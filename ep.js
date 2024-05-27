@@ -1,4 +1,4 @@
-const puppeteer = require("puppeteer");
+const puppeteer = require ("puppeteer");
 //import { collection, addDoc } from "firebase/firestore";
 const { collection, addDoc, getFirestore } = require("firebase/firestore");
 const { initializeApp } = require("firebase/app");
@@ -60,7 +60,7 @@ console.log("Voici l'agence : ", data.agence);
  const docRef = await addDoc(collection(db, "leads"), data);
  console.log("Document written with ID: ", docRef.id);
 
-module.exports = { userName: data.userName, coords: data.coords, db };
+module.exports = { userName: data.userName, coords: data.coords };
 
 //let data = await page.evaluate(() => {
 //  return document.querySelector("div[id=contact_seller_realtor_user_name]").innerText, document.querySelector("div[id=contact_seller_realtor_coords]").innerText;
@@ -95,3 +95,4 @@ module.exports = { userName: data.userName, coords: data.coords, db };
   }*/
 
 })();
+export { db };
