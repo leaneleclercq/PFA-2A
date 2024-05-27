@@ -1,10 +1,7 @@
 const puppeteer = require("puppeteer");
-<<<<<<< HEAD
 import { collection, addDoc } from "firebase/firestore";
-=======
 const nodemailer = require("nodemailer");
 // import { collection, addDoc } from "firebase/firestore";
->>>>>>> 8cd36697efdb3683dcbbf3047eb16679c5603003
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -48,8 +45,8 @@ console.log("Voici le nom de l'utilisateur : ", data.userName);
 console.log("Voici l'agence : ", data.agence);
 
 
-// const docRef = await addDoc(collection(db, "leads"), data);
-// console.log("Document written with ID: ", docRef.id);
+ const docRef = await addDoc(collection(db, "leads"), data);
+ console.log("Document written with ID: ", docRef.id);
 
 module.exports = { userName: data.userName, coords: data.coords };
 
