@@ -5,7 +5,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { collection, query, getDocs } from "firebase/firestore";
 import { useEffect } from "react";
-import { db } from '../../ep';
+import { db } from '../ep';
 
 const { userName, coords, agence } = require("./ep");
 
@@ -32,10 +32,10 @@ function App() {
     const fetchLeads = async () => {
       const q = query(collection(db, "leads"));
       const querySnapshot = await getDocs(q);
-      const docs = [];
+      const docs = []; // création d'un tableau 
       querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        docs.push({ id: doc.id, ...doc.data() });
+        docs.push({ id: doc.id, ...doc.data() }); // ajoute au tableau 
       });
       setLeads(docs);
     };
@@ -43,13 +43,15 @@ function App() {
     fetchLeads();
   }, []);
 
+  
+
   return (
     <>
       <div>
         <h1>Leads</h1>
         <ul>
           {leads.map(lead => (
-            <li key={lead.id}>{JSON.stringify(lead)}</li>
+            <li key={lead.id}>{JSON.stringify(lead)}</li> 
           ))}
         </ul>
       </div>
